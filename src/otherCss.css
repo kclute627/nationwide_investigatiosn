@@ -177,3 +177,30 @@ background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox=
         opacity: 1;
     }
 }
+
+.arrow-up {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+
+      ;
+      margin: 2rem;
+
+      
+    
+}
+
+.serviceBox {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    /* Adjust 0.3s to your desired speed */
+    display: flex;
+    /* We keep it as flex, but use opacity and visibility to hide/show */
+}
+
+.serviceBox.show {
+    opacity: 1;
+    visibility: visible;
+}

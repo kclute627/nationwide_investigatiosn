@@ -127,3 +127,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
  });
+
+ const services = document.getElementById("services");
+ const serviceBox = document.getElementById("service-box");
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+   if (services) {
+       services.addEventListener("mouseenter", () => {
+            serviceBox.classList.remove("opacity-0", "invisible");
+            serviceBox.classList.add("opacity-100", "visible");
+       })
+
+       serviceBox.addEventListener("mouseleave", () => {
+           serviceBox.classList.add("opacity-0");
+           serviceBox.classList.remove("opacity-100");
+       });
+       serviceBox.addEventListener("transitionend", (event) => {
+           // Check if the transition that ended is for the opacity property
+           if (event.propertyName === "opacity" && window.getComputedStyle(serviceBox).opacity == "0") {
+               serviceBox.classList.add("invisible");
+           }
+       });
+   }
+});
